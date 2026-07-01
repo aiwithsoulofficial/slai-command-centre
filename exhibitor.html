@@ -80,6 +80,18 @@
   .ex p{font-size:13.5px;color:var(--text-muted);}
   .ex-note{text-align:center;max-width:640px;margin:30px auto 0;font-size:14.5px;color:var(--text-muted);}
 
+  /* TIMELINE */
+  .timeline{max-width:640px;margin:0 auto;}
+  .tl-item{display:flex;gap:22px;padding:16px 0;border-bottom:1px solid var(--border-light);align-items:flex-start;}
+  .tl-item:last-child{border-bottom:0;}
+  .tl-time{flex:0 0 92px;font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--gold-dark);text-align:right;padding-top:1px;}
+  .tl-body .t{font-weight:600;color:var(--charcoal);font-size:15px;}
+  .tl-body .d{font-size:13.5px;color:var(--text-muted);margin-top:2px;}
+  .tl-item.peak{background:var(--gold-muted);border-radius:10px;padding:16px 16px;margin:2px 0;border-bottom:1px solid transparent;}
+  .win{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;max-width:660px;margin:0 auto 34px;}
+  .win span{background:var(--white);border:1px solid var(--border);border-radius:30px;padding:9px 18px;font-size:13px;color:var(--charcoal);}
+  .win b{color:var(--gold-dark);}
+
   /* CTA */
   .cta{position:relative;text-align:center;padding:74px 32px;overflow:hidden;
     background-image:linear-gradient(rgba(32,29,32,.78),rgba(32,29,32,.86)),url('https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a3e590b617a70a7f30865d.jpg');
@@ -133,10 +145,10 @@
           <div class="tier-for">For makers, readers &amp; product brands who want to sell + connect.</div>
         </div>
         <ul class="tier-list">
-          <li>Trestle table &amp; space in the marketplace</li>
-          <li>Listed in the event program</li>
-          <li>Featured on the website exhibitor page</li>
-          <li>Your own signage welcome</li>
+          <li>Your own stall space to properly showcase</li>
+          <li>Room for your table, banner &amp; display</li>
+          <li>Listed in the event program + website</li>
+          <li>Your own signage &amp; branding welcome</li>
         </ul>
       </div>
       <div class="tier-card featured">
@@ -175,6 +187,26 @@
   <div class="band" style="background-image:url('https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a3e59a753f15913f51e48a.jpg');">
     <div class="band-quote">A room full of the people you most want to meet - already leaning in.</div>
   </div>
+
+  <section class="section exchange">
+    <div class="section-eyebrow">Your day in the Glasshouse</div>
+    <div class="section-title">When You'll Shine</div>
+    <div class="section-subtitle">The whole room comes to the marketplace at doors-open, every break, and after we wrap. These are your prime windows.</div>
+    <div class="win">
+      <span><b>Before:</b> tell your community you'll be there</span>
+      <span><b>During:</b> every break, all yours</span>
+      <span><b>After:</b> open ~1 hr past wrap</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item peak"><div class="tl-time">8:00am</div><div class="tl-body"><div class="t">Doors open · marketplace live</div><div class="d">Guests grab a coffee at the cart, collect their program, settle in - and browse your stall before the day begins.</div></div></div>
+      <div class="tl-item"><div class="tl-time">9:00am</div><div class="tl-body"><div class="t">Conference begins (sharp)</div><div class="d">Doors to the main program open.</div></div></div>
+      <div class="tl-item peak"><div class="tl-time">10:30am</div><div class="tl-body"><div class="t">Morning tea · 20 mins</div><div class="d">Room empties into the marketplace - a buzzing browsing window.</div></div></div>
+      <div class="tl-item peak"><div class="tl-time">12:30pm</div><div class="tl-body"><div class="t">Lunch</div><div class="d">Your longest, busiest selling + connecting window of the day.</div></div></div>
+      <div class="tl-item peak"><div class="tl-time">2:45pm</div><div class="tl-body"><div class="t">Afternoon tea</div><div class="d">One more relaxed browse before we close.</div></div></div>
+      <div class="tl-item"><div class="tl-time">3:00pm</div><div class="tl-body"><div class="t">Conference wraps · marketplace stays open</div><div class="d">The marketplace stays open around an hour after for final connections and sales.</div></div></div>
+    </div>
+    <p class="ex-note">Promote before, sell during, and share your highlights after - the visibility works for you both ways.</p>
+  </section>
 
   <section class="section">
     <div class="section-eyebrow">Make it yours</div>
