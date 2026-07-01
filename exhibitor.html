@@ -4,130 +4,165 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SLAI 2026 - Exhibitor & Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--dark:#201D20;--dark2:#2a252a;--gold:#E6BF68;--gold2:#C9A44A;--cream:#FAF7F2;--white:#fff;}
+  :root{
+    --gold:#E6BF68;--gold-light:#F0D08A;--gold-dark:#C9A44A;--gold-muted:rgba(230,191,104,.15);
+    --charcoal:#201D20;--charcoal-mid:#2e2a2e;--body-bg:#f5f4f2;--cream:#FAF8F5;--white:#FFFFFF;
+    --text:#2C2A2C;--text-muted:#6B6570;--border:#E0DBD5;--border-light:#EDE8E2;
+  }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--cream);background:var(--dark);line-height:1.6;}
-  .page{max-width:900px;margin:0 auto;}
-  .serif{font-family:Georgia,'Times New Roman',serif;}
-  /* hero */
-  .hero{position:relative;text-align:center;padding:70px 40px 56px;background:
-     radial-gradient(700px 400px at 50% -10%, rgba(230,191,104,.16), transparent 60%),var(--dark);}
-  .brackets{position:relative;display:inline-block;padding:34px 46px;}
-  .brackets::before,.brackets::after{content:"";position:absolute;width:34px;height:34px;border:2px solid var(--gold);}
-  .brackets::before{top:0;left:0;border-right:0;border-bottom:0;}
-  .brackets::after{bottom:0;right:0;border-left:0;border-top:0;}
-  .eyebrow{font-size:12px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
-  h1{font-family:Georgia,serif;font-weight:400;font-size:44px;color:var(--white);line-height:1.1;}
-  h1 em{font-style:italic;color:var(--gold2);}
-  .sub{font-size:14px;letter-spacing:2px;color:rgba(250,247,242,.7);text-transform:uppercase;margin-top:18px;}
-  .meta{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px;}
-  .chip{border:1px solid rgba(230,191,104,.35);border-radius:30px;padding:8px 18px;font-size:13px;color:var(--gold);letter-spacing:1px;}
-  /* intro */
-  .intro{padding:44px 50px;background:var(--dark2);text-align:center;}
-  .intro p{max-width:640px;margin:0 auto;font-size:16px;color:rgba(250,247,242,.85);}
-  .intro .lead{font-family:Georgia,serif;font-style:italic;font-size:20px;color:var(--gold);margin-bottom:16px;}
-  /* sections */
-  .section{padding:48px 50px;}
-  .section-label{text-align:center;font-size:12px;letter-spacing:4px;color:var(--gold2);text-transform:uppercase;margin-bottom:8px;}
-  .section h2{text-align:center;font-family:Georgia,serif;font-weight:400;font-size:30px;color:var(--white);margin-bottom:6px;}
-  .section .note{text-align:center;font-size:13px;color:rgba(250,247,242,.55);margin-bottom:32px;}
-  /* tier cards */
-  .tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
-  .tier{background:rgba(255,255,255,.04);border:1px solid rgba(230,191,104,.25);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;}
-  .tier.feature{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;}
-  .tier .badge{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);background:var(--gold);border-radius:5px;padding:3px 9px;align-self:flex-start;margin-bottom:14px;}
-  .tier.market .badge{background:rgba(230,191,104,.2);color:var(--gold);}
-  .tier h3{font-family:Georgia,serif;font-weight:400;font-size:21px;color:var(--white);margin-bottom:2px;}
-  .tier .price{font-family:Georgia,serif;font-size:34px;color:var(--gold);margin:6px 0 4px;}
-  .tier .for{font-size:12.5px;font-style:italic;color:rgba(250,247,242,.6);margin-bottom:16px;min-height:34px;}
-  .tier ul{list-style:none;}
-  .tier li{font-size:13.5px;color:rgba(250,247,242,.85);padding:7px 0 7px 22px;position:relative;border-top:1px solid rgba(255,255,255,.07);}
-  .tier li:first-child{border-top:0;}
-  .tier li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:12px;top:8px;}
-  /* addons */
-  .addons{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:0 auto;}
-  .addon{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px 18px;font-size:14px;}
-  .addon .p{color:var(--gold);font-family:Georgia,serif;font-size:16px;}
-  /* energy exchange */
-  .exchange{background:var(--dark2);}
-  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:700px;margin:24px auto 0;}
-  .ex{background:rgba(230,191,104,.06);border:1px solid rgba(230,191,104,.2);border-radius:12px;padding:16px 18px;}
-  .ex h4{font-family:Georgia,serif;font-weight:400;font-size:16px;color:var(--gold);margin-bottom:5px;}
-  .ex p{font-size:13px;color:rgba(250,247,242,.75);}
-  /* cta */
-  .cta{text-align:center;padding:56px 50px;background:
-     radial-gradient(600px 300px at 50% 120%, rgba(230,191,104,.14), transparent 60%),var(--dark);}
-  .cta .scarcity{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
-  .cta h2{font-family:Georgia,serif;font-weight:400;font-size:30px;color:var(--white);margin-bottom:10px;}
-  .cta p{max-width:520px;margin:0 auto 26px;color:rgba(250,247,242,.8);font-size:15px;}
-  .btn{display:inline-block;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.5px;padding:16px 40px;border-radius:30px;}
-  /* footer */
-  footer{text-align:center;padding:26px;background:var(--dark);border-top:1px solid rgba(230,191,104,.15);}
-  footer .fq{font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:16px;margin-bottom:6px;}
-  footer .fs{font-size:11px;letter-spacing:3px;color:rgba(230,191,104,.5);text-transform:uppercase;}
-  @media print{@page{size:A4;margin:0;} body{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .section,.cta,.intro{page-break-inside:avoid;}}
-  @media(max-width:680px){.tiers{grid-template-columns:1fr;}.addons,.ex-grid{grid-template-columns:1fr;}h1{font-size:34px;}}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',-apple-system,Arial,sans-serif;background:var(--body-bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .page{max-width:1000px;margin:0 auto;background:var(--body-bg);}
+  .pf{font-family:'Playfair Display',Georgia,serif;}
+  img{max-width:100%;display:block;}
+
+  /* HERO */
+  .hero{position:relative;text-align:center;padding:78px 24px 72px;overflow:hidden;
+    background-image:linear-gradient(rgba(32,29,32,.72),rgba(32,29,32,.82)),url('https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a3e58895735c210b23b955.jpg');
+    background-size:cover;background-position:center top;}
+  .hero-logo{max-width:150px;margin:0 auto 26px;opacity:.96;}
+  .hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(34px,6vw,56px);color:var(--white);line-height:1.08;}
+  .hero h1 em{font-style:italic;color:var(--gold-light);font-weight:500;}
+  .hero-sub{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.78);margin-top:16px;}
+  .hero-divider{width:70px;height:2px;background:var(--gold);margin:26px auto 24px;}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
+  .chip{border:1px solid rgba(230,191,104,.5);border-radius:30px;padding:9px 20px;font-size:13px;color:var(--gold-light);letter-spacing:1px;}
+
+  /* INTRO */
+  .intro{background:var(--cream);text-align:center;padding:56px 32px;border-bottom:1px solid var(--border-light);}
+  .intro .lead{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--charcoal);margin-bottom:16px;}
+  .intro p{max-width:660px;margin:0 auto;font-size:16px;color:var(--text-muted);}
+
+  /* SECTIONS */
+  .section{padding:64px 32px;}
+  .section-eyebrow{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dark);text-align:center;margin-bottom:12px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);font-weight:600;color:var(--charcoal);text-align:center;line-height:1.2;}
+  .section-subtitle{text-align:center;font-size:14px;color:var(--text-muted);margin-top:10px;margin-bottom:40px;}
+
+  /* TIER CARDS */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .tier-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;position:relative;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column;}
+  .tier-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(32,29,32,.10);}
+  .tier-card.featured{border:2px solid var(--gold);box-shadow:0 14px 40px rgba(230,191,104,.22);}
+  .tier-top{padding:28px 26px 22px;border-bottom:1px solid var(--border-light);}
+  .tier-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dark);background:var(--gold-muted);border-radius:6px;padding:5px 11px;margin-bottom:16px;}
+  .tier-card.featured .tier-badge{color:var(--charcoal);background:var(--gold);}
+  .tier-name{font-family:'Playfair Display',serif;font-size:23px;font-weight:600;color:var(--charcoal);}
+  .tier-price{font-family:'Playfair Display',serif;font-size:40px;font-weight:600;color:var(--gold-dark);margin:8px 0 6px;}
+  .tier-for{font-size:13px;font-style:italic;color:var(--text-muted);min-height:38px;}
+  .tier-list{padding:22px 26px 28px;list-style:none;flex:1;}
+  .tier-list li{font-size:14px;color:var(--text);padding:9px 0 9px 26px;position:relative;}
+  .tier-list li::before{content:"";position:absolute;left:2px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--gold);}
+  .tier-list li.head{font-weight:600;color:var(--charcoal);}
+  .tier-list li.head::before{background:var(--gold-dark);}
+
+  /* PHOTO BAND */
+  .band{position:relative;height:300px;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(32,29,32,.5),rgba(32,29,32,.62));}
+  .band .band-quote{position:relative;z-index:1;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3.4vw,32px);color:var(--white);max-width:720px;padding:0 30px;line-height:1.35;}
+
+  /* ADD-ONS */
+  .addons{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px;margin:0 auto;}
+  .addon{display:flex;justify-content:space-between;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 22px;font-size:14.5px;color:var(--text);}
+  .addon .p{color:var(--gold-dark);font-family:'Playfair Display',serif;font-size:19px;font-weight:600;}
+
+  /* ENERGY EXCHANGE */
+  .exchange{background:var(--cream);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light);}
+  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:760px;margin:0 auto;}
+  .ex{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:22px 24px;}
+  .ex h4{font-family:'Playfair Display',serif;font-weight:600;font-size:18px;color:var(--charcoal);margin-bottom:6px;}
+  .ex h4 span{color:var(--gold-dark);margin-right:8px;}
+  .ex p{font-size:13.5px;color:var(--text-muted);}
+  .ex-note{text-align:center;max-width:640px;margin:30px auto 0;font-size:14.5px;color:var(--text-muted);}
+
+  /* CTA */
+  .cta{position:relative;text-align:center;padding:74px 32px;overflow:hidden;
+    background-image:linear-gradient(rgba(32,29,32,.78),rgba(32,29,32,.86)),url('https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a3e590b617a70a7f30865d.jpg');
+    background-size:cover;background-position:center;}
+  .cta .scarcity{font-size:12px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .cta h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,4vw,38px);color:var(--white);margin-bottom:14px;}
+  .cta p{max-width:540px;margin:0 auto 30px;color:rgba(255,255,255,.85);font-size:15.5px;}
+  .btn{display:inline-block;background:var(--gold);color:var(--charcoal);text-decoration:none;font-weight:600;font-size:16px;letter-spacing:.4px;padding:17px 44px;border-radius:32px;transition:transform .15s,box-shadow .25s;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(230,191,104,.4);}
+
+  /* FOOTER */
+  footer{text-align:center;padding:30px;background:var(--charcoal);}
+  footer .fq{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold-light);font-size:17px;margin-bottom:8px;}
+  footer .fs{font-size:11px;letter-spacing:3px;color:rgba(230,191,104,.55);text-transform:uppercase;}
+
+  @media print{@page{size:A4;margin:0;} body,.page{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .section,.cta,.intro,.band,.exchange{page-break-inside:avoid;}}
+  @media(max-width:720px){.tiers{grid-template-columns:1fr;}.addons,.ex-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="hero">
-    <div class="brackets">
-      <div class="eyebrow">Spiritual Leaders Awards International 2026</div>
-      <h1>Exhibitor &amp; <em>Marketplace</em></h1>
-      <div class="sub">The Spiritual Business Leaders Conference</div>
-    </div>
-    <div class="meta">
+  <header class="hero">
+    <img class="hero-logo" src="https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a38431133a409ac658bd86.png" alt="Spiritual Leaders Awards International">
+    <div class="hero-eyebrow">Spiritual Leaders Awards International 2026</div>
+    <h1>Exhibitor &amp; <em>Marketplace</em></h1>
+    <div class="hero-sub">The Spiritual Business Leaders Conference</div>
+    <div class="hero-divider"></div>
+    <div class="chips">
       <span class="chip">Wednesday 15 October</span>
       <span class="chip">The Glasshouse</span>
       <span class="chip">The Island · Gold Coast</span>
     </div>
-  </div>
+  </header>
 
-  <div class="intro">
-    <p class="lead">Bring your magic into the room.</p>
-    <p>For one day, the Glasshouse becomes a curated marketplace at the heart of the Spiritual Business Leaders Conference - a captive, engaged room of nominees, VIPs and delegates who are here to invest in themselves and their businesses. This isn't a walk-past market. It's your product, your energy, in front of exactly the right people.</p>
-  </div>
+  <section class="intro">
+    <div class="lead pf">Bring your magic into the room.</div>
+    <p>For one day, the Glasshouse becomes a curated marketplace at the heart of the Spiritual Business Leaders Conference - a captive, engaged room of nominees, VIPs and delegates here to invest in themselves and their businesses. This isn't a walk-past market. It's your product, your energy, in front of exactly the right people.</p>
+  </section>
 
-  <div class="section">
-    <div class="section-label">Choose your space</div>
-    <h2>Stall Tiers</h2>
-    <div class="note">Wednesday 15 October · The Glasshouse · limited spaces</div>
+  <section class="section">
+    <div class="section-eyebrow">Choose your space</div>
+    <div class="section-title">Stall Tiers</div>
+    <div class="section-subtitle">Wednesday 15 October · The Glasshouse · limited spaces</div>
     <div class="tiers">
-      <div class="tier market">
-        <span class="badge">Market</span>
-        <h3>Market Stall</h3>
-        <div class="price">$395</div>
-        <div class="for">For makers, readers &amp; product brands who want to sell + connect.</div>
-        <ul>
+      <div class="tier-card">
+        <div class="tier-top">
+          <span class="tier-badge">Market</span>
+          <div class="tier-name">Market Stall</div>
+          <div class="tier-price">$395</div>
+          <div class="tier-for">For makers, readers &amp; product brands who want to sell + connect.</div>
+        </div>
+        <ul class="tier-list">
           <li>Trestle table &amp; space in the marketplace</li>
           <li>Listed in the event program</li>
           <li>Featured on the website exhibitor page</li>
           <li>Your own signage welcome</li>
         </ul>
       </div>
-      <div class="tier feature">
-        <span class="badge">Most Popular</span>
-        <h3>Feature Stall</h3>
-        <div class="price">$795</div>
-        <div class="for">Prime position and a spotlight - be seen and remembered.</div>
-        <ul>
-          <li>Everything in Market, plus:</li>
+      <div class="tier-card featured">
+        <div class="tier-top">
+          <span class="tier-badge">Most Popular</span>
+          <div class="tier-name">Feature Stall</div>
+          <div class="tier-price">$795</div>
+          <div class="tier-for">Prime position and a spotlight - be seen and remembered.</div>
+        </div>
+        <ul class="tier-list">
+          <li class="head">Everything in Market, plus:</li>
           <li>Prime, high-flow location</li>
           <li>1 social media feature on SLAI channels</li>
-          <li>Insert in the 29 winner goodie bags</li>
+          <li>Priority placement in the winner goodie bags</li>
           <li>A scheduled 15-min demo / experience slot</li>
         </ul>
       </div>
-      <div class="tier">
-        <span class="badge">Exclusive</span>
-        <h3>Exclusive Stall</h3>
-        <div class="price">$1,500</div>
-        <div class="for">The only one of your kind in the room. Category locked to you.</div>
-        <ul>
-          <li>Everything in Feature, plus:</li>
+      <div class="tier-card">
+        <div class="tier-top">
+          <span class="tier-badge">Exclusive</span>
+          <div class="tier-name">Exclusive Stall</div>
+          <div class="tier-price">$1,500</div>
+          <div class="tier-for">The only one of your kind in the room. Category locked to you.</div>
+        </div>
+        <ul class="tier-list">
+          <li class="head">Everything in Feature, plus:</li>
           <li>Category exclusivity (you own your niche)</li>
           <li>Prime double space + a branding moment</li>
           <li>Social spotlight feature</li>
@@ -135,39 +170,52 @@
         </ul>
       </div>
     </div>
+  </section>
+
+  <div class="band" style="background-image:url('https://assets.cdn.filesafe.space/ADOTS56fHDDghWSBIcOz/media/69a3e59a753f15913f51e48a.jpg');">
+    <div class="band-quote">A room full of the people you most want to meet - already leaning in.</div>
   </div>
 
-  <div class="section">
-    <div class="section-label">Make it yours</div>
-    <h2>Add-Ons</h2>
-    <div class="note">Layer these onto any stall</div>
+  <section class="section">
+    <div class="section-eyebrow">Make it yours</div>
+    <div class="section-title">Add-Ons</div>
+    <div class="section-subtitle">Layer these onto any stall</div>
     <div class="addons">
-      <div class="addon"><span>Winner goodie-bag insert (×29)</span><span class="p">$195</span></div>
-      <div class="addon"><span>Attendee offer card / QR</span><span class="p">$95</span></div>
       <div class="addon"><span>Program feature / half-page ad</span><span class="p">$150</span></div>
       <div class="addon"><span>Extra demo / experience slot</span><span class="p">$150</span></div>
     </div>
-  </div>
+  </section>
 
-  <div class="section exchange">
-    <div class="section-label">A different kind of yes</div>
-    <h2>The Energy Exchange</h2>
-    <div class="note">Not every partnership is cash. If you'd love to contribute your gifts instead, let's design a reciprocal exchange.</div>
+  <section class="section exchange">
+    <div class="section-eyebrow">Get into their hands - no fee</div>
+    <div class="section-title">Into the Goodie Bags</div>
+    <div class="section-subtitle">No cost to you - simply gift your product and we'll place it. Beautiful exposure, even without a stall.</div>
     <div class="ex-grid">
-      <div class="ex"><h4>Share your audience</h4><p>A dedicated email or social feature to your community, introducing them to SLAI.</p></div>
-      <div class="ex"><h4>Offer an experience</h4><p>A ceremony, sound healing, or readings that elevate the day for everyone.</p></div>
-      <div class="ex"><h4>Gift our winners</h4><p>Your product in the winner goodie bags, or a prize for the draw.</p></div>
-      <div class="ex"><h4>Back each other</h4><p>Reciprocal sponsorship - we champion your event, you champion ours.</p></div>
+      <div class="ex"><h4><span>✦</span>Every attendee bag</h4><p>A small product or sample - plus an offer - reaching every delegate at the awards. Wonderful for brand discovery.</p></div>
+      <div class="ex"><h4><span>✦</span>The 29 winner bags</h4><p>Something substantial for our award winners - a premium gift that sits beside their trophy and their moment.</p></div>
     </div>
-    <p style="text-align:center;margin-top:26px;font-size:14px;color:rgba(250,247,242,.7);max-width:600px;margin-left:auto;margin-right:auto;">We'll put a fair value on what you bring and offset it against your space - so a full or partial energy exchange is genuinely possible for aligned partners. Just start the conversation.</p>
-  </div>
+    <p class="ex-note">You provide the product, we provide the audience. A generous, no-cost way to get your brand into the right hands.</p>
+  </section>
 
-  <div class="cta">
+  <section class="section">
+    <div class="section-eyebrow">A different kind of yes</div>
+    <div class="section-title">The Energy Exchange</div>
+    <div class="section-subtitle">Not every partnership is cash. If you'd love to contribute your gifts instead, let's design a reciprocal exchange.</div>
+    <div class="ex-grid">
+      <div class="ex"><h4><span>✦</span>Share your audience</h4><p>A dedicated email or social feature to your community, introducing them to SLAI.</p></div>
+      <div class="ex"><h4><span>✦</span>Offer an experience</h4><p>A ceremony, sound healing, or readings that elevate the day for everyone.</p></div>
+      <div class="ex"><h4><span>✦</span>Gift our winners</h4><p>Your product in the winner goodie bags, or a prize for the draw.</p></div>
+      <div class="ex"><h4><span>✦</span>Back each other</h4><p>Reciprocal sponsorship - we champion your event, you champion ours.</p></div>
+    </div>
+    <p class="ex-note">We'll put a fair value on what you bring and offset it against your space - so a full or partial energy exchange is genuinely possible for aligned partners. Just start the conversation.</p>
+  </section>
+
+  <section class="cta">
     <div class="scarcity">Limited spaces in the Glasshouse</div>
-    <h2>Come and be part of it</h2>
+    <h2 class="pf">Come and be part of it</h2>
     <p>Spaces are finite and curated by category. If your brand belongs in this room, let's talk - cash, exchange, or a little of both.</p>
     <a class="btn" href="https://www.spiritualawardsinternational.com/sponsorship-page#tiers">Register Your Interest</a>
-  </div>
+  </section>
 
   <footer>
     <div class="fq">This is bigger than awards. It's a revolution.</div>
