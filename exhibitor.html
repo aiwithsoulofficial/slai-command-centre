@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLAI 2026 - Exhibitor & Marketplace</title>
+<style>
+  :root{--dark:#201D20;--dark2:#2a252a;--gold:#E6BF68;--gold2:#C9A44A;--cream:#FAF7F2;--white:#fff;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--cream);background:var(--dark);line-height:1.6;}
+  .page{max-width:900px;margin:0 auto;}
+  .serif{font-family:Georgia,'Times New Roman',serif;}
+  /* hero */
+  .hero{position:relative;text-align:center;padding:70px 40px 56px;background:
+     radial-gradient(700px 400px at 50% -10%, rgba(230,191,104,.16), transparent 60%),var(--dark);}
+  .brackets{position:relative;display:inline-block;padding:34px 46px;}
+  .brackets::before,.brackets::after{content:"";position:absolute;width:34px;height:34px;border:2px solid var(--gold);}
+  .brackets::before{top:0;left:0;border-right:0;border-bottom:0;}
+  .brackets::after{bottom:0;right:0;border-left:0;border-top:0;}
+  .eyebrow{font-size:12px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:16px;}
+  h1{font-family:Georgia,serif;font-weight:400;font-size:44px;color:var(--white);line-height:1.1;}
+  h1 em{font-style:italic;color:var(--gold2);}
+  .sub{font-size:14px;letter-spacing:2px;color:rgba(250,247,242,.7);text-transform:uppercase;margin-top:18px;}
+  .meta{display:inline-flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px;}
+  .chip{border:1px solid rgba(230,191,104,.35);border-radius:30px;padding:8px 18px;font-size:13px;color:var(--gold);letter-spacing:1px;}
+  /* intro */
+  .intro{padding:44px 50px;background:var(--dark2);text-align:center;}
+  .intro p{max-width:640px;margin:0 auto;font-size:16px;color:rgba(250,247,242,.85);}
+  .intro .lead{font-family:Georgia,serif;font-style:italic;font-size:20px;color:var(--gold);margin-bottom:16px;}
+  /* sections */
+  .section{padding:48px 50px;}
+  .section-label{text-align:center;font-size:12px;letter-spacing:4px;color:var(--gold2);text-transform:uppercase;margin-bottom:8px;}
+  .section h2{text-align:center;font-family:Georgia,serif;font-weight:400;font-size:30px;color:var(--white);margin-bottom:6px;}
+  .section .note{text-align:center;font-size:13px;color:rgba(250,247,242,.55);margin-bottom:32px;}
+  /* tier cards */
+  .tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+  .tier{background:rgba(255,255,255,.04);border:1px solid rgba(230,191,104,.25);border-radius:16px;padding:26px 22px;display:flex;flex-direction:column;}
+  .tier.feature{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;}
+  .tier .badge{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dark);background:var(--gold);border-radius:5px;padding:3px 9px;align-self:flex-start;margin-bottom:14px;}
+  .tier.market .badge{background:rgba(230,191,104,.2);color:var(--gold);}
+  .tier h3{font-family:Georgia,serif;font-weight:400;font-size:21px;color:var(--white);margin-bottom:2px;}
+  .tier .price{font-family:Georgia,serif;font-size:34px;color:var(--gold);margin:6px 0 4px;}
+  .tier .for{font-size:12.5px;font-style:italic;color:rgba(250,247,242,.6);margin-bottom:16px;min-height:34px;}
+  .tier ul{list-style:none;}
+  .tier li{font-size:13.5px;color:rgba(250,247,242,.85);padding:7px 0 7px 22px;position:relative;border-top:1px solid rgba(255,255,255,.07);}
+  .tier li:first-child{border-top:0;}
+  .tier li::before{content:"✦";position:absolute;left:0;color:var(--gold);font-size:12px;top:8px;}
+  /* addons */
+  .addons{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:640px;margin:0 auto;}
+  .addon{display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px 18px;font-size:14px;}
+  .addon .p{color:var(--gold);font-family:Georgia,serif;font-size:16px;}
+  /* energy exchange */
+  .exchange{background:var(--dark2);}
+  .ex-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:700px;margin:24px auto 0;}
+  .ex{background:rgba(230,191,104,.06);border:1px solid rgba(230,191,104,.2);border-radius:12px;padding:16px 18px;}
+  .ex h4{font-family:Georgia,serif;font-weight:400;font-size:16px;color:var(--gold);margin-bottom:5px;}
+  .ex p{font-size:13px;color:rgba(250,247,242,.75);}
+  /* cta */
+  .cta{text-align:center;padding:56px 50px;background:
+     radial-gradient(600px 300px at 50% 120%, rgba(230,191,104,.14), transparent 60%),var(--dark);}
+  .cta .scarcity{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  .cta h2{font-family:Georgia,serif;font-weight:400;font-size:30px;color:var(--white);margin-bottom:10px;}
+  .cta p{max-width:520px;margin:0 auto 26px;color:rgba(250,247,242,.8);font-size:15px;}
+  .btn{display:inline-block;background:var(--gold);color:var(--dark);text-decoration:none;font-weight:700;font-size:16px;letter-spacing:.5px;padding:16px 40px;border-radius:30px;}
+  /* footer */
+  footer{text-align:center;padding:26px;background:var(--dark);border-top:1px solid rgba(230,191,104,.15);}
+  footer .fq{font-family:Georgia,serif;font-style:italic;color:var(--gold);font-size:16px;margin-bottom:6px;}
+  footer .fs{font-size:11px;letter-spacing:3px;color:rgba(230,191,104,.5);text-transform:uppercase;}
+  @media print{@page{size:A4;margin:0;} body{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .section,.cta,.intro{page-break-inside:avoid;}}
+  @media(max-width:680px){.tiers{grid-template-columns:1fr;}.addons,.ex-grid{grid-template-columns:1fr;}h1{font-size:34px;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="brackets">
+      <div class="eyebrow">Spiritual Leaders Awards International 2026</div>
+      <h1>Exhibitor &amp; <em>Marketplace</em></h1>
+      <div class="sub">The Spiritual Business Leaders Conference</div>
+    </div>
+    <div class="meta">
+      <span class="chip">Wednesday 15 October</span>
+      <span class="chip">The Glasshouse</span>
+      <span class="chip">The Island · Gold Coast</span>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p class="lead">Bring your magic into the room.</p>
+    <p>For one day, the Glasshouse becomes a curated marketplace at the heart of the Spiritual Business Leaders Conference - a captive, engaged room of nominees, VIPs and delegates who are here to invest in themselves and their businesses. This isn't a walk-past market. It's your product, your energy, in front of exactly the right people.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Choose your space</div>
+    <h2>Stall Tiers</h2>
+    <div class="note">Wednesday 15 October · The Glasshouse · limited spaces</div>
+    <div class="tiers">
+      <div class="tier market">
+        <span class="badge">Market</span>
+        <h3>Market Stall</h3>
+        <div class="price">$395</div>
+        <div class="for">For makers, readers &amp; product brands who want to sell + connect.</div>
+        <ul>
+          <li>Trestle table &amp; space in the marketplace</li>
+          <li>Listed in the event program</li>
+          <li>Featured on the website exhibitor page</li>
+          <li>Your own signage welcome</li>
+        </ul>
+      </div>
+      <div class="tier feature">
+        <span class="badge">Most Popular</span>
+        <h3>Feature Stall</h3>
+        <div class="price">$795</div>
+        <div class="for">Prime position and a spotlight - be seen and remembered.</div>
+        <ul>
+          <li>Everything in Market, plus:</li>
+          <li>Prime, high-flow location</li>
+          <li>1 social media feature on SLAI channels</li>
+          <li>Insert in the 29 winner goodie bags</li>
+          <li>A scheduled 15-min demo / experience slot</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="badge">Exclusive</span>
+        <h3>Exclusive Stall</h3>
+        <div class="price">$1,500</div>
+        <div class="for">The only one of your kind in the room. Category locked to you.</div>
+        <ul>
+          <li>Everything in Feature, plus:</li>
+          <li>Category exclusivity (you own your niche)</li>
+          <li>Prime double space + a branding moment</li>
+          <li>Social spotlight feature</li>
+          <li>A mention from the stage</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Make it yours</div>
+    <h2>Add-Ons</h2>
+    <div class="note">Layer these onto any stall</div>
+    <div class="addons">
+      <div class="addon"><span>Winner goodie-bag insert (×29)</span><span class="p">$195</span></div>
+      <div class="addon"><span>Attendee offer card / QR</span><span class="p">$95</span></div>
+      <div class="addon"><span>Program feature / half-page ad</span><span class="p">$150</span></div>
+      <div class="addon"><span>Extra demo / experience slot</span><span class="p">$150</span></div>
+    </div>
+  </div>
+
+  <div class="section exchange">
+    <div class="section-label">A different kind of yes</div>
+    <h2>The Energy Exchange</h2>
+    <div class="note">Not every partnership is cash. If you'd love to contribute your gifts instead, let's design a reciprocal exchange.</div>
+    <div class="ex-grid">
+      <div class="ex"><h4>Share your audience</h4><p>A dedicated email or social feature to your community, introducing them to SLAI.</p></div>
+      <div class="ex"><h4>Offer an experience</h4><p>A ceremony, sound healing, or readings that elevate the day for everyone.</p></div>
+      <div class="ex"><h4>Gift our winners</h4><p>Your product in the winner goodie bags, or a prize for the draw.</p></div>
+      <div class="ex"><h4>Back each other</h4><p>Reciprocal sponsorship - we champion your event, you champion ours.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:26px;font-size:14px;color:rgba(250,247,242,.7);max-width:600px;margin-left:auto;margin-right:auto;">We'll put a fair value on what you bring and offset it against your space - so a full or partial energy exchange is genuinely possible for aligned partners. Just start the conversation.</p>
+  </div>
+
+  <div class="cta">
+    <div class="scarcity">Limited spaces in the Glasshouse</div>
+    <h2>Come and be part of it</h2>
+    <p>Spaces are finite and curated by category. If your brand belongs in this room, let's talk - cash, exchange, or a little of both.</p>
+    <a class="btn" href="https://www.spiritualawardsinternational.com/sponsorship-page#tiers">Register Your Interest</a>
+  </div>
+
+  <footer>
+    <div class="fq">This is bigger than awards. It's a revolution.</div>
+    <div class="fs">Spiritual Leaders Awards International</div>
+  </footer>
+
+</div>
+</body>
+</html>
